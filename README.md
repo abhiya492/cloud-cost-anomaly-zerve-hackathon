@@ -19,8 +19,8 @@ pip3 install -r requirements.txt
 # Run Day 1 baseline analysis
 jupyter notebook notebooks/day1_baseline.ipynb
 
-# Run Day 2 ML analysis
-jupyter notebook notebooks/day2_isolation_forest.ipynb
+# Run Day 2 enhanced ML analysis
+jupyter notebook notebooks/day2_enhanced.ipynb
 ```
 
 ## Project Structure
@@ -46,15 +46,21 @@ cloud-cost-anomaly/
 
 **Run:** `jupyter notebook notebooks/day1_baseline.ipynb`
 
-### Day 2: ML Anomaly Detection
-- Implemented Isolation Forest ML anomaly detection
-- Feature engineering for time-series behavior
-- Backtesting with precision, recall, F1-score
-- Business KPI: estimated cost leakage detection
-- Model comparison (baseline vs ML)
-- Model saved for API deployment
+### Day 2: Enhanced ML Anomaly Detection
+- Enhanced dataset with utilization, environment, and service context
+- Domain-driven feature engineering (cost_per_hour, cpu_cost_ratio)
+- Improved anomaly explainability with business logic
+- Business-aligned anomaly definitions
+- Isolation Forest with tuned parameters
+- Model comparison showing significant improvements
 
-**Run:** `jupyter notebook notebooks/day2_isolation_forest.ipynb`
+**Run:** `jupyter notebook notebooks/day2_enhanced.ipynb`
+
+#### Day 2 Enhancements
+- **Better Data**: Realistic AWS-like schema with CPU utilization and environment context
+- **Smart Features**: High-signal features that directly map to cloud inefficiency
+- **Explainable**: Each anomaly comes with business reasoning
+- **Validated**: Business logic ground truth for meaningful metrics
 
 ## Key Results
 
