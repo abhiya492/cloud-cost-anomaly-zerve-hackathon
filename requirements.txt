@@ -10,3 +10,4 @@ prophet
 shap
 pydantic
 pytest
+joblib
