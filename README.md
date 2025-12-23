@@ -20,7 +20,10 @@ pip3 install -r requirements.txt
 jupyter notebook notebooks/day1_baseline.ipynb
 
 # Run Day 2 enhanced ML analysis
-jupyter notebook notebooks/day2_enhanced.ipynb
+jupyter notebook notebooks/day2_enhanced_temporal.ipynb
+
+# Launch interactive dashboard
+streamlit run dashboard/app.py
 ```
 
 ## Project Structure
@@ -46,21 +49,39 @@ cloud-cost-anomaly/
 
 **Run:** `jupyter notebook notebooks/day1_baseline.ipynb`
 
-### Day 2: Enhanced ML Anomaly Detection
-- Enhanced dataset with utilization, environment, and service context
-- Domain-driven feature engineering (cost_per_hour, cpu_cost_ratio)
-- Improved anomaly explainability with business logic
-- Business-aligned anomaly definitions
-- Isolation Forest with tuned parameters
-- Model comparison showing significant improvements
+### Day 2: ML Anomaly Detection
+- Implemented Isolation Forest ML anomaly detection
+- Feature engineering for time-series behavior
+- Backtesting with precision, recall, F1-score
+- Business KPI: estimated cost leakage detection
+- Model comparison (baseline vs ML)
+- Model saved for API deployment
 
-**Run:** `jupyter notebook notebooks/day2_enhanced.ipynb`
+**Run:** `jupyter notebook notebooks/day2_isolation_forest.ipynb`
 
-#### Day 2 Enhancements
-- **Better Data**: Realistic AWS-like schema with CPU utilization and environment context
-- **Smart Features**: High-signal features that directly map to cloud inefficiency
-- **Explainable**: Each anomaly comes with business reasoning
-- **Validated**: Business logic ground truth for meaningful metrics
+### Day 3: Production API & Deployment
+- FastAPI service with ML model integration
+- RESTful endpoints for anomaly detection (/detect-anomalies, /batch-detect)
+- Real-time alerting system for high-confidence anomalies
+- Docker containerization for one-click deployment
+- Production-ready error handling and logging
+- Interactive API documentation (Swagger UI)
+
+**Run API:**
+```bash
+# Start the API server
+uvicorn api.main:app --reload
+
+# Test the API
+python api/test_api.py
+
+# View interactive docs
+open http://127.0.0.1:8000/docs
+
+# Docker deployment
+docker build -t cost-anomaly .
+docker run -p 8000:8000 cost-anomaly
+```
 
 ## Key Results
 
@@ -68,4 +89,13 @@ cloud-cost-anomaly/
 - **Features**: Cost lags, rolling statistics, change rates
 - **Validation**: Precision/Recall/F1 metrics
 - **Business Impact**: Estimated monthly cost savings
-- **Model**: Saved for production deployment
+- **API**: Production-ready FastAPI service
+- **Deployment**: Docker containerized
+
+## API Endpoints
+
+- `GET /` - API information
+- `GET /health` - Health check
+- `POST /detect-anomalies` - Single anomaly detection
+- `POST /batch-detect` - Batch anomaly detection
+- `GET /docs` - Interactive API documentation

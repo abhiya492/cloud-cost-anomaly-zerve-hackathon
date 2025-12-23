@@ -1,0 +1,24 @@
+[
+  {
+    "timestamp": "2025-12-23T16:20:57.133206",
+    "overall_drift_ratio": 1.0,
+    "drifted_features": [
+      "cost"
+    ],
+    "total_features_checked": 1,
+    "drift_detected": true,
+    "feature_results": {
+      "cost": {
+        "ks_statistic": 0.355,
+        "p_value": 2.435056842111727e-56,
+        "drift_detected": true,
+        "mean_shift": 1.0011518952684133,
+        "std_change": 0.2797537604962087,
+        "ref_mean": 100.4113303397136,
+        "curr_mean": 120.03288943870105,
+        "ref_std": 19.598982123062278,
+        "curr_std": 25.08187135364068
+      }
+    }
+  }
+]
