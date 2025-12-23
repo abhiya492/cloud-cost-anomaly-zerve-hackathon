@@ -1,0 +1,16 @@
+{
+  "features": [
+    "cost",
+    "usage_hours",
+    "cpu_utilization",
+    "cost_per_hour",
+    "cpu_cost_ratio"
+  ],
+  "contamination": 0.12,
+  "n_estimators": 150,
+  "performance": {
+    "precision": 0.25,
+    "recall": 0.2,
+    "f1_score": 0.2222222222222222
+  }
+}

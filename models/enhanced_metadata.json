@@ -1,0 +1,35 @@
+{
+  "model_type": "Enhanced Isolation Forest with Temporal Context",
+  "features": [
+    "cost",
+    "usage_hours",
+    "cpu_utilization",
+    "cost_per_hour",
+    "cpu_cost_ratio",
+    "cost_change_1d",
+    "cost_change_2d",
+    "is_weekend",
+    "rolling_std_3d"
+  ],
+  "enhancements": [
+    "Multi-day context",
+    "Seasonality awareness",
+    "Anomaly type classification",
+    "Confidence scoring"
+  ],
+  "performance": {
+    "precision": 0.6666666666666666,
+    "recall": 0.4,
+    "f1_score": 0.5
+  },
+  "anomaly_types": [
+    "Idle Resource Waste",
+    "Weekend Cost Spike",
+    "Sudden Cost Change"
+  ],
+  "business_impact": {
+    "total_anomaly_cost": 280.0,
+    "estimated_savings": 98.0,
+    "roi_percentage": 0.35
+  }
+}

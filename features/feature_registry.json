@@ -1,0 +1,16 @@
+{
+  "cost_per_hour": {
+    "description": "Cost divided by usage hours",
+    "type": "derived",
+    "dependencies": [],
+    "created_at": "2025-12-23T16:20:57.104465",
+    "last_updated": "2025-12-23T16:20:57.104470"
+  },
+  "is_weekend": {
+    "description": "Weekend indicator",
+    "type": "temporal",
+    "dependencies": [],
+    "created_at": "2025-12-23T16:20:57.104616",
+    "last_updated": "2025-12-23T16:20:57.104630"
+  }
+}
